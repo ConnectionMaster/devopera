@@ -1,29 +1,4 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="12em" height="12em"
-     viewBox="0 0 240 240" preserveAspectRatio="preserve">
-  <title>A badly-coded broken clock</title>
-  <g id="c" transform="translate(120,120)">
-    <g id="h">
-      <line stroke-width="5" y2="80" stroke="black" opacity=".5"/>
-      <animateTransform attributeName="transform" type="rotate"
-        repeatCount="indefinite" dur="12h" by="360"/>
-      <circle r="7"/>
-    </g>
-    <g id="m">
-      <line stroke-width="4" y2="95" stroke="red" opacity=".9"/>
-      <animateTransform attributeName="transform" type="rotate"
-        repeatCount="indefinite" dur="60min" by="360"/>
-      <circle r="6" fill="red"/>
-    </g>
-    <g id="s">
-      <line stroke-width="2" y2="100" stroke="blue"/>
-      <animateTransform attributeName="transform" type="rotate"
-        additive="sum" repeatCount="indefinite" dur="60s " by="360"/>
-      <circle r="4" fill="blue"/>
-    </g>
-  </g>
-  <!-- Set the time to match the wall clock, at the start -->
-  <script type="text/ecmascript"> <![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" width="12em" height="12em" preserveAspectRatio="preserve" viewBox="0 0 240 240"><title>A badly-coded broken clock</title><g id="c" transform="translate(120,120)"><g id="h"><line y2="80" stroke="#000" stroke-width="5" opacity=".5"/><animateTransform attributeName="transform" by="360" dur="12h" repeatCount="indefinite" type="rotate"/><circle r="7"/></g><g id="m"><line y2="95" stroke="red" stroke-width="4" opacity=".9"/><animateTransform attributeName="transform" by="360" dur="60min" repeatCount="indefinite" type="rotate"/><circle r="6" fill="red"/></g><g id="s"><line y2="100" stroke="#00f" stroke-width="2"/><animateTransform additive="sum" attributeName="transform" by="360" dur="60s" repeatCount="indefinite" type="rotate"/><circle r="4" fill="#00f"/></g></g><script type="text/ecmascript"><![CDATA[
 //  interacts badly with the transforms so don't use it as a function
     var timeNow = new Date();
     document.getElementById("h").setAttribute("transform",'rotate(' +
@@ -32,5 +7,4 @@
       (timeNow.getMinutes()*6 + timeNow.getSeconds() / 10 +180) + ')');
     document.getElementById("s").setAttribute("transform",'rotate(' +
       (Date().getSeconds()*6 +180) + ')');
-  ]]></script>
-</svg>
+  ]]></script></svg>
